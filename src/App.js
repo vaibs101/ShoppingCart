@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import data from "./components/back/data/Data";
 import Header from './components/front/Header/Header';
 import {BrowserRouter as Router} from "react-router-dom";

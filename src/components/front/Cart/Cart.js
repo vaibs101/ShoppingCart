@@ -7,14 +7,23 @@ const Cart = ({cartItems,handleAddProduct,handleRemoveProduct,handleCartClearanc
     return (
     <div className='cart-items'>
       <h2 className='cart-items-header'>Cart Items</h2>
+      
       <div className='clear-cart'>
       {
+      
         cartItems.length>=1 && (
-            <button className='clear-cart-button' onClick={handleCartClearance}>Clear Cart</button>
+            
+            <div className='cart-items-headers'>
+            <h1 className='cart-items-header-quantity'>Quantity</h1>
+            <div className='cart-items-header-unitprice'>Unit Price</div>
+       
+            <button className='clear-cart-button' onClick={handleCartClearance}>Clear Cart</button></div>
+            
         )
       }
-        
+      
       </div>
+      
       {
         cartItems.length === 0 &&(
             <div className='cart-items-empty'>No items are added.</div>
@@ -30,8 +39,9 @@ const Cart = ({cartItems,handleAddProduct,handleRemoveProduct,handleCartClearanc
                 <button className='cart-items-add' onClick={()=>handleAddProduct(item)}>+</button>
                 <button className='cart-items-remove' onClick={()=>handleRemoveProduct(item)}>-</button>
              </div>
+             <div className='cart-items-quantity'>{item.quantity}</div>
              <div className='cart-items-price'>
-                {item.quantity}*${item.price}
+                ${item.price}
              </div>
              
              </div>
